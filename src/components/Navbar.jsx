@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
+import { useState } from 'react';
 
 const links = [
   { href: '#about', label: 'About' },
@@ -9,43 +8,11 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navRef = useRef(null);
-
-  useEffect(() => {
-    const hero = document.getElementById('hero');
-    if (!hero) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setScrolled(!entry.isIntersecting),
-      { threshold: 0.05 }
-    );
-    observer.observe(hero);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(navRef.current, {
-        y: -80,
-        opacity: 0,
-        duration: 1,
-        delay: 0.3,
-        ease: 'power3.out',
-      });
-    }, navRef);
-    return () => ctx.revert();
-  }, []);
 
   return (
     <nav
-      ref={navRef}
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between gap-8 px-6 py-3 transition-all duration-500 ${
-        scrolled
-          ? 'bg-obsidian/60 backdrop-blur-xl border border-ivory/[0.06] rounded-full shadow-lg shadow-black/20'
-          : 'bg-transparent border border-transparent rounded-full'
-      }`}
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between gap-8 px-6 py-3 bg-transparent border border-transparent rounded-full"
       style={{ width: 'min(90vw, 720px)' }}
     >
       {/* Logo */}
