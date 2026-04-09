@@ -5,7 +5,7 @@ import Features from './components/Features';
 import Philosophy from './components/Philosophy';
 import Pricing from './components/Pricing';
 import CalEmbed from './components/CalEmbed';
-import Footer from './components/Footer';
+
 
 export default function App() {
   return (
@@ -19,7 +19,6 @@ export default function App() {
         <Pricing />
         <CalEmbed />
       </main>
-      <Footer />
     </>
   );
 }
