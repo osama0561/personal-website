@@ -71,7 +71,7 @@ export default function Philosophy() {
               {word}
             </span>
           ))}
-          <span className="manifesto-word inline-block text-champagne">
+          <span className="manifesto-word inline-block text-teal">
             revenue.
           </span>
         </h2>

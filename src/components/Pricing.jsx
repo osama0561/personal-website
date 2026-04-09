@@ -35,7 +35,7 @@ const tiers = [
       'Ongoing optimization & scaling',
     ],
     cta: 'Book a Call',
-    href: 'https://cal.com/osama-h5hzqs/30min',
+    href: 'https://cal.com/osama-h5hzqs/60',
     highlighted: true,
   },
   {
@@ -51,7 +51,7 @@ const tiers = [
       'Priority support & SLA',
     ],
     cta: 'Book a Call',
-    href: 'https://cal.com/osama-h5hzqs/30min',
+    href: 'https://cal.com/osama-h5hzqs/60',
     highlighted: false,
   },
 ];
@@ -81,12 +81,12 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="text-center mb-20">
-          <p className="font-mono text-xs text-champagne/60 uppercase tracking-[0.2em] mb-4">
+          <p className="font-mono text-xs text-teal/60 uppercase tracking-[0.2em] mb-4">
             Work with me
           </p>
           <h2 className="font-sans font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ivory">
             Choose your{' '}
-            <span className="font-display italic text-champagne">path.</span>
+            <span className="font-display italic text-teal">path.</span>
           </h2>
         </div>
 
@@ -97,7 +97,7 @@ export default function Pricing() {
               key={tier.name}
               className={`pricing-card rounded-[2rem] p-8 lg:p-10 transition-all duration-300 ${
                 tier.highlighted
-                  ? 'bg-champagne/[0.06] border-2 border-champagne/20 ring-1 ring-champagne/10 scale-[1.02]'
+                  ? 'bg-teal/[0.06] border-2 border-teal/20 ring-1 ring-teal/10 scale-[1.02]'
                   : 'card-surface'
               }`}
             >
@@ -107,7 +107,7 @@ export default function Pricing() {
                   {tier.name}
                 </h3>
                 {tier.nameAr && (
-                  <p className="text-sm text-champagne/60 mt-1 font-medium">
+                  <p className="text-sm text-teal/60 mt-1 font-medium">
                     {tier.nameAr}
                   </p>
                 )}
@@ -130,7 +130,7 @@ export default function Pricing() {
               <ul className="space-y-3 mb-10">
                 {tier.features.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm">
-                    <span className="text-champagne mt-0.5 text-xs">◆</span>
+                    <span className="text-teal mt-0.5 text-xs">◆</span>
                     <span className="text-ivory/50">{f}</span>
                   </li>
                 ))}
@@ -143,7 +143,7 @@ export default function Pricing() {
                 rel={tier.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className={`btn-magnetic w-full inline-flex items-center justify-center gap-2 font-semibold text-sm tracking-wide uppercase px-6 py-3.5 rounded-full ${
                   tier.highlighted
-                    ? 'bg-champagne text-obsidian'
+                    ? 'bg-teal text-obsidian'
                     : 'bg-ivory/[0.06] text-ivory border border-ivory/[0.08]'
                 }`}
               >

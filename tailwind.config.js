@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         obsidian: '#0D0D12',
-        champagne: '#C9A84C',
+        teal: '#4ECDC4',
         ivory: '#FAF8F5',
         slate: {
           DEFAULT: '#2A2A35',

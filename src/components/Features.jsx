@@ -39,7 +39,7 @@ function DiagnosticShuffler() {
             transition: 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
           }}
         >
-          <p className="font-mono text-xs text-champagne tracking-wider">
+          <p className="font-mono text-xs text-teal tracking-wider">
             {shufflerItems[idx]}
           </p>
         </div>
@@ -96,8 +96,8 @@ function TelemetryTypewriter() {
   return (
     <div className="font-mono text-xs leading-relaxed h-40 overflow-hidden">
       <div className="flex items-center gap-2 mb-3">
-        <span className="w-2 h-2 rounded-full bg-champagne animate-pulse-dot" />
-        <span className="text-champagne/70 text-[10px] uppercase tracking-widest">
+        <span className="w-2 h-2 rounded-full bg-teal animate-pulse-dot" />
+        <span className="text-teal/70 text-[10px] uppercase tracking-widest">
           Live Feed
         </span>
       </div>
@@ -109,7 +109,7 @@ function TelemetryTypewriter() {
       {displayText && (
         <p className="text-ivory/70 mb-1">
           {displayText}
-          <span className="cursor-blink text-champagne ml-0.5">▊</span>
+          <span className="cursor-blink text-teal ml-0.5">▊</span>
         </p>
       )}
     </div>
@@ -200,7 +200,7 @@ function CursorScheduler() {
             key={i}
             className={`w-9 h-9 rounded-xl flex items-center justify-center text-[10px] font-mono font-medium transition-all duration-300 ${
               activeDay !== null && (i === 3 || i === 5)
-                ? 'bg-champagne text-obsidian scale-95'
+                ? 'bg-teal text-obsidian scale-95'
                 : 'bg-ivory/[0.04] text-ivory/30 border border-ivory/[0.06]'
             }`}
           >
@@ -213,7 +213,7 @@ function CursorScheduler() {
       <button
         className={`font-mono text-[10px] uppercase tracking-widest px-4 py-2 rounded-xl transition-all duration-300 ${
           saved
-            ? 'bg-champagne/20 text-champagne border border-champagne/30'
+            ? 'bg-teal/20 text-teal border border-teal/30'
             : 'bg-ivory/[0.03] text-ivory/30 border border-ivory/[0.06]'
         }`}
       >
@@ -273,12 +273,12 @@ export default function Features() {
     <section id="work" ref={sectionRef} className="py-32 lg:py-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Label */}
-        <p className="font-mono text-xs text-champagne/60 uppercase tracking-[0.2em] mb-4">
+        <p className="font-mono text-xs text-teal/60 uppercase tracking-[0.2em] mb-4">
           What we build
         </p>
         <h2 className="font-sans font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ivory mb-20">
           Automation for{' '}
-          <span className="font-display italic text-champagne">
+          <span className="font-display italic text-teal">
             real business
           </span>{' '}
           use cases.

@@ -79,7 +79,7 @@ export default function Hero() {
 
           {/* Line 2 — Massive Serif Italic */}
           <h1 className="hero-line-2 font-display italic font-bold text-6xl sm:text-7xl lg:text-[8rem] xl:text-[9rem] leading-[0.9] tracking-tight text-ivory mb-8">
-            Automation<span className="text-champagne">.</span>
+            Automation<span className="text-teal">.</span>
           </h1>
 
           {/* Subtitle */}
@@ -89,10 +89,10 @@ export default function Hero() {
 
           {/* CTA */}
           <a
-            href="https://cal.com/osama-h5hzqs/30min"
+            href="https://cal.com/osama-h5hzqs/60"
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-cta btn-magnetic inline-flex items-center gap-3 bg-champagne text-obsidian font-semibold text-sm tracking-wide uppercase px-8 py-4 rounded-full"
+            className="hero-cta btn-magnetic inline-flex items-center gap-3 bg-teal text-obsidian font-semibold text-sm tracking-wide uppercase px-8 py-4 rounded-full"
           >
             <span className="btn-bg bg-ivory/20 rounded-full" />
             <span className="relative z-10 flex items-center gap-3">

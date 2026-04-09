@@ -1,7 +1,8 @@
 const navLinks = [
+  { href: '#about', label: 'About' },
   { href: '#work', label: 'Work' },
-  { href: '#process', label: 'Process' },
   { href: '#community', label: 'Community' },
+  { href: '#book', label: 'Book a Call' },
 ];
 
 const socialLinks = [
@@ -41,10 +42,10 @@ export default function Footer() {
                 </a>
               ))}
               <a
-                href="https://cal.com/osama-h5hzqs/30min"
+                href="https://cal.com/osama-h5hzqs/60"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-lift text-sm text-champagne/60 hover:text-champagne w-fit"
+                className="link-lift text-sm text-teal/60 hover:text-teal w-fit"
               >
                 Book a Call
               </a>

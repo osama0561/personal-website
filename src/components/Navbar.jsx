@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 const links = [
+  { href: '#about', label: 'About' },
   { href: '#work', label: 'Work' },
-  { href: '#process', label: 'Process' },
   { href: '#community', label: 'Community' },
+  { href: '#book', label: 'Book' },
 ];
 
 export default function Navbar() {
@@ -49,7 +50,7 @@ export default function Navbar() {
     >
       {/* Logo */}
       <a href="#" className="font-semibold text-ivory tracking-tight text-sm whitespace-nowrap">
-        Osama<span className="text-champagne">.</span>
+        Osama<span className="text-teal">.</span>
       </a>
 
       {/* Desktop Links */}
@@ -67,10 +68,10 @@ export default function Navbar() {
 
       {/* CTA */}
       <a
-        href="https://cal.com/osama-h5hzqs/30min"
+        href="https://cal.com/osama-h5hzqs/60"
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-magnetic hidden md:inline-flex items-center gap-2 bg-champagne text-obsidian text-xs font-semibold tracking-wide uppercase px-5 py-2 rounded-full"
+        className="btn-magnetic hidden md:inline-flex items-center gap-2 bg-teal text-obsidian text-xs font-semibold tracking-wide uppercase px-5 py-2 rounded-full"
       >
         <span className="btn-bg bg-ivory/20 rounded-full" />
         <span className="relative z-10">Book a Call</span>
@@ -105,10 +106,10 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://cal.com/osama-h5hzqs/30min"
+            href="https://cal.com/osama-h5hzqs/60"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-magnetic bg-champagne text-obsidian text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full text-center"
+            className="btn-magnetic bg-teal text-obsidian text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full text-center"
           >
             Book a Call
           </a>
