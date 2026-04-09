@@ -1,59 +1,15 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play, FileText, Users, Zap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const tiers = [
-  {
-    name: 'Community',
-    nameAr: 'مجلس الأتمتة',
-    price: '$68',
-    period: '/mo',
-    description: 'Learn automation alongside Arabic-speaking builders and professionals.',
-    features: [
-      'Weekly live sessions & workshops',
-      'Ready-to-use automation templates',
-      'Private community of builders',
-      'Direct access to Osama',
-    ],
-    cta: 'Join the Community',
-    href: '#',
-    highlighted: false,
-  },
-  {
-    name: 'Consultancy',
-    nameAr: null,
-    price: 'Custom',
-    period: '',
-    description: 'A dedicated engagement to automate your operations end-to-end.',
-    features: [
-      'Full operations audit & diagnosis',
-      'Custom system architecture',
-      'n8n, CRM, and AI integration',
-      'Ongoing optimization & scaling',
-    ],
-    cta: 'Book a Call',
-    href: 'https://cal.com/osama-h5hzqs/60',
-    highlighted: true,
-  },
-  {
-    name: 'Enterprise',
-    nameAr: null,
-    price: 'Custom',
-    period: '',
-    description: 'Full operations overhaul for organizations ready to go all-in on automation.',
-    features: [
-      'Everything in Consultancy',
-      'Multi-department automation',
-      'Team training & onboarding',
-      'Priority support & SLA',
-    ],
-    cta: 'Book a Call',
-    href: 'https://cal.com/osama-h5hzqs/60',
-    highlighted: false,
-  },
+const perks = [
+  { icon: Play, text: 'Beginner-friendly video courses' },
+  { icon: FileText, text: 'Step-by-step automation templates' },
+  { icon: Users, text: 'Arabic-speaking community of builders' },
+  { icon: Zap, text: 'Go from zero to building AI tools in 7 days' },
 ];
 
 export default function Pricing() {
@@ -61,11 +17,11 @@ export default function Pricing() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.pricing-card', {
-        y: 50,
+      gsap.from('.community-content > *', {
+        y: 40,
         opacity: 0,
         duration: 0.7,
-        stagger: 0.15,
+        stagger: 0.1,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -78,83 +34,52 @@ export default function Pricing() {
 
   return (
     <section id="community" ref={sectionRef} className="py-32 lg:py-40">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <p className="font-mono text-xs text-teal/60 uppercase tracking-[0.2em] mb-4">
-            Work with me
+      <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="card-surface p-10 sm:p-14 lg:p-20 community-content text-center">
+          {/* Label */}
+          <p className="font-mono text-xs text-teal/60 uppercase tracking-[0.2em] mb-6">
+            مجلس الأتمتة
           </p>
-          <h2 className="font-sans font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ivory">
-            Choose your{' '}
-            <span className="font-display italic text-teal">path.</span>
+
+          {/* Headline */}
+          <h2 className="font-sans font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ivory mb-6">
+            Learn AI in{' '}
+            <span className="font-display italic text-teal">7 days.</span>
           </h2>
-        </div>
 
-        {/* Pricing Grid */}
-        <div className="grid md:grid-cols-3 gap-6 items-start">
-          {tiers.map((tier, i) => (
-            <div
-              key={tier.name}
-              className={`pricing-card rounded-[2rem] p-8 lg:p-10 transition-all duration-300 ${
-                tier.highlighted
-                  ? 'bg-teal/[0.06] border-2 border-teal/20 ring-1 ring-teal/10 scale-[1.02]'
-                  : 'card-surface'
-              }`}
-            >
-              {/* Tier Name */}
-              <div className="mb-6">
-                <h3 className="font-sans font-semibold text-xl text-ivory tracking-tight">
-                  {tier.name}
-                </h3>
-                {tier.nameAr && (
-                  <p className="text-sm text-teal/60 mt-1 font-medium">
-                    {tier.nameAr}
-                  </p>
-                )}
-              </div>
+          {/* Description */}
+          <p className="text-lg text-ivory/45 leading-relaxed max-w-2xl mx-auto mb-12">
+            Simple, practical courses designed for beginners. No fluff, no
+            prerequisites — just real skills you can use to automate your
+            work and build AI-powered tools from day one.
+          </p>
 
-              {/* Price */}
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="font-sans font-bold text-4xl text-ivory">
-                  {tier.price}
-                </span>
-                <span className="text-ivory/30 text-sm">{tier.period}</span>
-              </div>
-
-              {/* Description */}
-              <p className="text-sm text-ivory/40 leading-relaxed mb-8">
-                {tier.description}
-              </p>
-
-              {/* Features */}
-              <ul className="space-y-3 mb-10">
-                {tier.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm">
-                    <span className="text-teal mt-0.5 text-xs">◆</span>
-                    <span className="text-ivory/50">{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <a
-                href={tier.href}
-                target={tier.href.startsWith('http') ? '_blank' : undefined}
-                rel={tier.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className={`btn-magnetic w-full inline-flex items-center justify-center gap-2 font-semibold text-sm tracking-wide uppercase px-6 py-3.5 rounded-full ${
-                  tier.highlighted
-                    ? 'bg-teal text-obsidian'
-                    : 'bg-ivory/[0.06] text-ivory border border-ivory/[0.08]'
-                }`}
+          {/* Perks Grid */}
+          <div className="grid sm:grid-cols-2 gap-5 max-w-xl mx-auto mb-14 text-left">
+            {perks.map(({ icon: Icon, text }) => (
+              <div
+                key={text}
+                className="flex items-center gap-4 px-5 py-4 rounded-2xl bg-ivory/[0.03] border border-ivory/[0.05]"
               >
-                <span className={`btn-bg rounded-full ${tier.highlighted ? 'bg-ivory/20' : 'bg-ivory/[0.04]'}`} />
-                <span className="relative z-10 flex items-center gap-2">
-                  {tier.cta}
-                  <ArrowRight size={14} />
-                </span>
-              </a>
-            </div>
-          ))}
+                <Icon size={18} className="text-teal flex-shrink-0" />
+                <span className="text-sm text-ivory/50">{text}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <a
+            href="https://majlis-landing-two.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-magnetic inline-flex items-center gap-3 bg-teal text-obsidian font-semibold text-sm tracking-wide uppercase px-10 py-4 rounded-full"
+          >
+            <span className="btn-bg bg-ivory/20 rounded-full" />
+            <span className="relative z-10 flex items-center gap-3">
+              Join the Community
+              <ArrowRight size={16} />
+            </span>
+          </a>
         </div>
       </div>
     </section>
